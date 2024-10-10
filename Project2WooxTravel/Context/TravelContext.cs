@@ -13,5 +13,6 @@ namespace Project2WooxTravel.Context
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Destination> Destinations{ get; set; }
         public DbSet<Reservation> Reservations{ get; set; }
+        public DbSet<Admin> Admins{ get; set; }
     }
 }
