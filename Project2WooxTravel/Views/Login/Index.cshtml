@@ -1,0 +1,14 @@
+﻿@model Project2WooxTravel.Models.Entities.Admin
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<div class="container mb-5 mt-2">
+    <div class="alert alert-primary"><h3>Kullanıcı Giriş Sayfası</h3></div>
+
+    <label>Kullanıcı Adınız</label>
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control mb-3" })
+
+    <label>Şifreniz</label>
+    @Html.PasswordFor(x => x.Password, new { @class = "form-control mb-3" })
+</div>
