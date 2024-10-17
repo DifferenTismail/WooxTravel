@@ -7,6 +7,7 @@ using Project2WooxTravel.Context;
 using Project2WooxTravel.Models.Entities;
 namespace Project2WooxTravel.Areas.Admin.Controllers
 {
+    [Authorize]
     public class DestinationController : Controller
     {
         TravelContext context = new TravelContext();
