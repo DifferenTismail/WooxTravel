@@ -3,12 +3,15 @@
     Layout = null;
 }
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
-<div class="container mb-5 mt-2">
-    <div class="alert alert-primary"><h3>Kullanıcı Giriş Sayfası</h3></div>
+<form method="post">
+    <div class="container mb-5 mt-2">
+        <div class="alert alert-primary"><h3>Kullanıcı Giriş Sayfası</h3></div>
 
-    <label>Kullanıcı Adınız</label>
-    @Html.TextBoxFor(x => x.Username, new { @class = "form-control mb-3" })
+        <label>Kullanıcı Adınız</label>
+        @Html.TextBoxFor(x => x.Username, new { @class = "form-control mb-3" })
 
-    <label>Şifreniz</label>
-    @Html.PasswordFor(x => x.Password, new { @class = "form-control mb-3" })
-</div>
+        <label>Şifreniz</label>
+        @Html.PasswordFor(x => x.Password, new { @class = "form-control mb-3" })
+        <button class="btn btn-primary">Giriş</button>
+    </div>
+</form>

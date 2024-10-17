@@ -3,20 +3,24 @@
     Layout = null;
 }
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
-<div class="container mb-5 mt-2">
-    <div class="alert alert-primary"><h3>Yeni Kullanıcı Kayıt Sayfası</h3></div>
-    <label>Adınız</label>
-    @Html.TextBoxFor(x => x.Name, new { @class = "form-control mb-3" })
+<form method="post">
+    <div class="container mb-5 mt-2">
+        <div class="alert alert-primary"><h3>Yeni Kullanıcı Kayıt Sayfası</h3></div>
+        <label>Adınız</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control mb-3" })
 
-    <label>Soyadınız</label>
-    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control mb-3" })
+        <label>Soyadınız</label>
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control mb-3" })
 
-    <label>Email Adresiniz</label>
-    @Html.TextBoxFor(x => x.Email, new { @class = "form-control mb-3" })
+        <label>Email Adresiniz</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control mb-3" })
 
-    <label>Kullanıcı Adınız</label>
-    @Html.TextBoxFor(x => x.Username, new { @class = "form-control mb-3" })
+        <label>Kullanıcı Adınız</label>
+        @Html.TextBoxFor(x => x.Username, new { @class = "form-control mb-3" })
 
-    <label>Şifreniz</label>
-    @Html.PasswordFor(x => x.Password, new { @class = "form-control mb-3" })
-</div>
+        <label>Şifreniz</label>
+        @Html.PasswordFor(x => x.Password, new { @class = "form-control mb-3" })
+        <button class="btn btn-primary">Ekle</button>
+    </div>
+</form>
+
