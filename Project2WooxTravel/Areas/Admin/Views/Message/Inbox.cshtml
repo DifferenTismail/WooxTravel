@@ -1,0 +1,62 @@
+﻿@model List<Project2WooxTravel.Models.Entities.Message>
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Gelen Mesaj Sayfası</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Gönderici</th>
+                                    <th scope="col">Konu</th>
+                                    <th scope="col">Tarih</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Mesajı Aç</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.SenderMail</td>
+                                        <td>@item.Subject</td>
+                                        <td>@item.SendDate.ToShortDateString()</td>
+                                        <td>@item.IsRead</td>
+                                        <td>
+                                            <a href="/Admin/Destination/DeleteDestination/@item.MessageID" class="btn btn-danger btn-sm">
+                                                <i class="fas fa-envelope-open-text"></i>
+                                                Mesajı Aç
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/Admin/Message/SendMessage/" class="btn btn-primary">
+                            <i class="fas fa-arrow-right"></i>
+                            Yeni Mesaj Gönder
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
