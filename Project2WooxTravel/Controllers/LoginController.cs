@@ -19,7 +19,7 @@ namespace Project2WooxTravel.Controllers
         public ActionResult Index(Admin admin)
         {
             var values = context.Admins.FirstOrDefault(x => x.Username == admin.Username && x.Password == admin.Password);
-            if (values != null) 
+            if (values != null)
             {
                 FormsAuthentication.SetAuthCookie(values.Username, false);
                 Session["x"] = values.Username;
@@ -30,5 +30,6 @@ namespace Project2WooxTravel.Controllers
                 return View();
             }
         }
+
     }
 }
