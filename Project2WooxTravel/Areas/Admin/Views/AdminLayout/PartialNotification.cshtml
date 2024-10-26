@@ -1,0 +1,12 @@
+﻿@model List<Project2WooxTravel.Models.Entities.Destination>
+@foreach(var x in Model) {
+<a href="#">
+    <div class="notif-icon notif-primary">
+        <i class="fa fa-user-plus"></i>
+    </div>
+    <div class="notif-content">
+        <span class="block"> @x.Title </span>
+        <span class="time"> @x.City</span>
+    </div>
+</a>
+}

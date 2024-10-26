@@ -1,0 +1,47 @@
+﻿@model List<Project2WooxTravel.Models.Entities.Admin>
+<li class="nav-item topbar-user dropdown hidden-caret">
+    @foreach (var item in Model)
+    {
+        <a class="dropdown-toggle profile-pic"
+           data-bs-toggle="dropdown"
+           href="#"
+           aria-expanded="false">
+            <div class="avatar-sm">
+                <img src="@item.ImageUrl"
+                     alt="..."
+                     class="avatar-img rounded-circle" />
+            </div>
+            <span class="profile-username">
+                <span class="op-7">Merhaba,</span>
+                <span class="fw-bold">@item.Username</span>
+            </span>
+        </a>
+    }
+    <ul class="dropdown-menu dropdown-user animated fadeIn">
+        <div class="dropdown-user-scroll scrollbar-outer">
+            @foreach (var x in Model)
+            {
+            <li>
+                <div class="user-box">
+                    <div class="avatar-lg">
+                        <img src="@x.ImageUrl"
+                             alt="image profile"
+                             class="avatar-img rounded" />
+                    </div>
+                    <div class="u-text">
+                        <h4>@x.Username</h4>
+                        <p class="text-muted">@x.Email</p>
+                    </div>
+                </div>
+            </li>
+        }
+            <li>
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="/Message/Inbox/">Inbox</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/Profile/Logout">Çıkış Yap</a>
+            </li>
+            </div>
+        </ul>
+    </li>
