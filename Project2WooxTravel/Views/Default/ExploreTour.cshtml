@@ -1,0 +1,104 @@
+﻿@model List<Project2WooxTravel.Models.Entities.Destination>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+
+@Html.Action("PartialHead", "Default")
+@foreach (var i in Model)
+{
+    <style>
+    .about-main-content {
+        background-image: url(@i.ImageUrl);
+    }
+    .blur-bg {
+        background: url(@i.ImageUrl) no-repeat center center fixed;
+    }
+    </style>
+}
+<body>
+
+    @Html.Action("PartialNavbar", "Default")
+    <div class="about-main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+                        <div class="blur-bg"></div>
+                        <h4>Turumuzu Keşfedin</h4>
+                        <div class="line-dec"></div>
+                        @foreach (var item in Model)
+                        {
+                            <h2>@item.Title</h2>
+                            <p>@item.Description</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+    @Html.Action("ExploreTourBanner", "Default")
+
+    
+
+
+    <div class="more-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="left-image">
+                        <img src="/wooxtravel-1.0.0/assets/images/about-left-image.jpg" alt="">
+                    </div>
+                </div>
+                @foreach (var x in Model)
+                {
+                    <div class="col-lg-6">
+                        <div class="section-heading">
+                            <h2>@x.Country</h2>
+                            <p>@x.Description</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="info-item">
+                                    <h4>@x.DayNight Gün - @(x.DayNight - 1) Gece</h4>
+                                    <span>Kaç Gün</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="info-item">
+                                    <h4>@x.Capacity</h4>
+                                    <span>Kişi Kapasitemiz</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="info-item">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h4>@x.City</h4>
+                                            <span>Harika Şehir</span>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h4>@x.Price₺</h4>
+                                            <span>Ücret</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+    @Html.Action("PartialFooter", "Default")
+
+
+    @Html.Action("PartialScript", "Default")
+</body>
+
+</html>
