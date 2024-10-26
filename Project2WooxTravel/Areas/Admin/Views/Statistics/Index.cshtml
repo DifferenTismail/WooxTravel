@@ -1,12 +1,11 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    // Verileri JSON formatında tanımlayın
+    var capacityData = Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Capacity);
+    var priceData = Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Price);
+    var dayNightData = Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.DayNight);
 }
-
-
-
-
 
 <div class="container">
     <div class="page-inner">
@@ -15,7 +14,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Line Chart</div>
+                        <div class="card-title">Line Chart (Kapsite)</div>
                     </div>
                     <div class="card-body">
                         <div class="chart-container">
@@ -27,7 +26,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Bar Chart</div>
+                        <div class="card-title">Bar Chart (Fiyatlar)</div>
                     </div>
                     <div class="card-body">
                         <div class="chart-container">
@@ -39,12 +38,11 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Pie Chart</div>
+                        <div class="card-title">Pie Char (Gün)</div>
                     </div>
                     <div class="card-body">
                         <div class="chart-container">
-                            <canvas id="pieChart"
-                                    style="width: 50%; height: 50%"></canvas>
+                            <canvas id="pieChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -52,17 +50,15 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Doughnut Chart Fiyat Karşılaştırması</div>
+                        <div class="card-title">Doughnut Chart (Fiyatlar)</div>
                     </div>
                     <div class="card-body">
                         <div class="chart-container">
-                            <canvas id="doughnutChart"
-                                    style="width: 50%; height: 50%"></canvas>
+                            <canvas id="doughnutChart"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -74,46 +70,32 @@
     var lineChart = document.getElementById("lineChart").getContext("2d"),
         barChart = document.getElementById("barChart").getContext("2d"),
         pieChart = document.getElementById("pieChart").getContext("2d"),
-        doughnutChart = document
-            .getElementById("doughnutChart")
-            .getContext("2d");
-     
+        doughnutChart = document.getElementById("doughnutChart").getContext("2d");
 
+    // ViewBag'den gelen verileri JavaScript değişkenlerine aktar
+    var capacityData = @Html.Raw(capacityData);
+    var priceData = @Html.Raw(priceData);
+    var dayNightData = @Html.Raw(dayNightData);
+
+    // Line Chart
     var myLineChart = new Chart(lineChart, {
         type: "line",
         data: {
-            labels: [
-                "Jan",
-                "Feb",
-                "Mar",
-                "Apr",
-                "May",
-                "Jun",
-                "Jul",
-                "Aug",
-                "Sep",
-                "Oct",
-                "Nov",
-                "Dec",
-            ],
-            datasets: [
-                {
-                    label: "Active Users",
-                    borderColor: "#1d7af3",
-                    pointBorderColor: "#FFF",
-                    pointBackgroundColor: "#1d7af3",
-                    pointBorderWidth: 2,
-                    pointHoverRadius: 4,
-                    pointHoverBorderWidth: 1,
-                    pointRadius: 4,
-                    backgroundColor: "transparent",
-                    fill: true,
-                    borderWidth: 2,
-                    data: [
-                        542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 900,
-                    ],
-                },
-            ],
+            labels: ["1.Proje", "2.Proje", "3.Proje"],
+            datasets: [{
+                label: "Kapasite",
+                borderColor: "#1d7af3",
+                pointBorderColor: "#FFF",
+                pointBackgroundColor: "#1d7af3",
+                pointBorderWidth: 2,
+                pointHoverRadius: 4,
+                pointHoverBorderWidth: 1,
+                pointRadius: 4,
+                backgroundColor: "transparent",
+                fill: true,
+                borderWidth: 2,
+                data: capacityData 
+            }],
         },
         options: {
             responsive: true,
@@ -140,58 +122,41 @@
         },
     });
 
+    // Bar Chart
     var myBarChart = new Chart(barChart, {
         type: "bar",
         data: {
-            labels: [
-                "Jan",
-                "Feb",
-                "Mar",
-                "Apr",
-                "May",
-                "Jun",
-                "Jul",
-                "Aug",
-                "Sep",
-                "Oct",
-                "Nov",
-                "Dec",
-            ],
-            datasets: [
-                {
-                    label: "Sales",
-                    backgroundColor: "rgb(23, 125, 255)",
-                    borderColor: "rgb(23, 125, 255)",
-                    data: [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4],
-                },
-            ],
+            labels: ["1.Proje", "2.Proje", "3.Proje"],
+            datasets: [{
+                label: "Fiyatlar",
+                backgroundColor: "rgb(23, 125, 255)",
+                borderColor: "rgb(23, 125, 255)",
+                data: priceData 
+            }],
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             scales: {
-                yAxes: [
-                    {
-                        ticks: {
-                            beginAtZero: true,
-                        },
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
                     },
-                ],
+                }],
             },
         },
     });
 
+    // Pie Chart
     var myPieChart = new Chart(pieChart, {
         type: "pie",
         data: {
-            datasets: [
-                {
-                    data: [50, 35, 15],
-                    backgroundColor: ["#1d7af3", "#f3545d", "#fdaf4b"],
-                    borderWidth: 0,
-                },
-            ],
-            labels: ["New Visitors", "Subscribers", "Active Users"],
+            datasets: [{
+                data: dayNightData,
+                backgroundColor: ["#1d7af3", "#f3545d", "#fdaf4b"],
+                borderWidth: 0,
+            }],
+            labels: ["1.Proje", "2.Proje", "3.Proje"],
         },
         options: {
             responsive: true,
@@ -222,17 +187,15 @@
         },
     });
 
+    // Doughnut Chart
     var myDoughnutChart = new Chart(doughnutChart, {
         type: "doughnut",
         data: {
-            datasets: [
-                {
-                    data: [10, 20, 30],
-                    backgroundColor: ["#f3545d", "#fdaf4b", "#1d7af3"],
-                },
-            ],
-
-            labels: ["Red", "Yellow", "Blue"],
+            datasets: [{
+                data: priceData,
+                backgroundColor: ["#f3545d", "#fdaf4b", "#1d7af3"],
+            }],
+            labels: ["1.Proje", "2.Proje", "3.Proje"],
         },
         options: {
             responsive: true,
@@ -250,12 +213,4 @@
             },
         },
     });
-
-
-
-    // bind onClick event to all LI-tags of the legend
-    var legendItems = myLegendContainer.getElementsByTagName("li");
-    for (var i = 0; i < legendItems.length; i += 1) {
-        legendItems[i].addEventListener("click", legendClickCallback, false);
-    }</script>
-
+</script>

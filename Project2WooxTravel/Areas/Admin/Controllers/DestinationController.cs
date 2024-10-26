@@ -55,5 +55,9 @@ namespace Project2WooxTravel.Areas.Admin.Controllers
             context.SaveChanges();
             return RedirectToAction("DestinationList", "Destination", "Admin");
         }
+        public ActionResult Payment()
+        {
+            return View();
+        }
     }
 }

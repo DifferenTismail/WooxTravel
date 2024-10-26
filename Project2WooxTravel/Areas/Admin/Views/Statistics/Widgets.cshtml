@@ -7,7 +7,7 @@
 <div class="container">
     <div class="page-inner">
         <!-- Card -->
-        <h3 class="fw-bold mb-3">Card</h3>
+        <h3 class="fw-bold mb-3">İstatistikler</h3>
         <div class="row">
             <div class="col-sm-6 col-md-3">
                 <div class="card card-stats card-primary card-round">
@@ -59,7 +59,7 @@
                             <div class="col-7 col-stats">
                                 <div class="numbers">
                                     <p class="card-category">En Ucuz Tur</p>
-                                    <h4 class="card-title">@ViewBag.lowestPrice</h4>
+                                    <h4 class="card-title">@ViewBag.lowestPrice₺</h4>
                                 </div>
                             </div>
                         </div>
@@ -77,8 +77,8 @@
                             </div>
                             <div class="col-7 col-stats">
                                 <div class="numbers">
-                                    <p class="card-category">Order</p>
-                                    <h4 class="card-title">576</h4>
+                                    <p class="card-category">En Kapasiteli Tur</p>
+                                    <h4 class="card-title">@ViewBag.maxCapacityTour</h4>
                                 </div>
                             </div>
                         </div>
@@ -99,8 +99,8 @@
                             </div>
                             <div class="col-7 col-stats">
                                 <div class="numbers">
-                                    <p class="card-category">Number</p>
-                                    <h4 class="card-title">150GB</h4>
+                                    <p class="card-category">En Uzun Tur</p>
+                                    <h4 class="card-title">@ViewBag.dayNight Gün</h4>
                                 </div>
                             </div>
                         </div>
@@ -118,8 +118,8 @@
                             </div>
                             <div class="col-7 col-stats">
                                 <div class="numbers">
-                                    <p class="card-category">Revenue</p>
-                                    <h4 class="card-title">$ 1,345</h4>
+                                    <p class="card-category">Ortalama Fiyatımız</p>
+                                    <h4 class="card-title">@ViewBag.avgMoney₺</h4>
                                 </div>
                             </div>
                         </div>
@@ -137,8 +137,8 @@
                             </div>
                             <div class="col-7 col-stats">
                                 <div class="numbers">
-                                    <p class="card-category">Errors</p>
-                                    <h4 class="card-title">23</h4>
+                                    <p class="card-category">Adet Kategori Var</p>
+                                    <h4 class="card-title">@ViewBag.howManyCategory</h4>
                                 </div>
                             </div>
                         </div>
@@ -156,8 +156,8 @@
                             </div>
                             <div class="col-7 col-stats">
                                 <div class="numbers">
-                                    <p class="card-category">Followers</p>
-                                    <h4 class="card-title">+45K</h4>
+                                    <p class="card-category">Mail Gönderildi</p>
+                                    <h4 class="card-title">@ViewBag.howManyMailSended</h4>
                                 </div>
                             </div>
                         </div>
@@ -178,8 +178,8 @@
                             </div>
                             <div class="col col-stats ms-3 ms-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Visitors</p>
-                                    <h4 class="card-title">1,294</h4>
+                                    <p class="card-category">En Kısa Tur</p>
+                                    <h4 class="card-title">@ViewBag.shortestTour Gün</h4>
                                 </div>
                             </div>
                         </div>
@@ -197,8 +197,8 @@
                             </div>
                             <div class="col col-stats ms-3 ms-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Subscribers</p>
-                                    <h4 class="card-title">1303</h4>
+                                    <p class="card-category">Mail Alındı</p>
+                                    <h4 class="card-title">@ViewBag.howManyMeesageReceive</h4>
                                 </div>
                             </div>
                         </div>
@@ -216,8 +216,8 @@
                             </div>
                             <div class="col col-stats ms-3 ms-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Sales</p>
-                                    <h4 class="card-title">$ 1,345</h4>
+                                    <p class="card-category">Kaç Adet Admin</p>
+                                    <h4 class="card-title">@ViewBag.howManyAdmin</h4>
                                 </div>
                             </div>
                         </div>
@@ -235,8 +235,8 @@
                             </div>
                             <div class="col col-stats ms-3 ms-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Order</p>
-                                    <h4 class="card-title">576</h4>
+                                    <p class="card-category">Rezeryasyon Yapıldı</p>
+                                    <h4 class="card-title">@ViewBag.howManyReservacion Adet</h4>
                                 </div>
                             </div>
                         </div>
