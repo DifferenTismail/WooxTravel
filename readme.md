@@ -47,6 +47,8 @@ Bu proje, aşağıdaki teknolojileri kullanır:
 ![UI Sayfası Görüntüsü](photos/index1.jpg)
 ![UI Sayfası Görüntüsü](photos/index2.jpg)
 ![UI Sayfası Görüntüsü](photos/indexFooter.jpg)
+
+### Tur Detay Sayfaları
 ![UI Sayfası Görüntüsü](photos/exploreTour.jpg)
 ![UI Sayfası Görüntüsü](photos/exploreTour2.jpg)
 
