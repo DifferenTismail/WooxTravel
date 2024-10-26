@@ -817,22 +817,22 @@ Banner Style
   border-color: #22b3c1;
   transition: 0.3s;
 }
-#section-1 .content-slider .slider #top-banner-1 {
-  background: url('../images/banner-01.jpg') no-repeat center center;
-  background-size: cover;
-}
-#section-1 .content-slider .slider #top-banner-2 {
-  background: url('../images/banner-02.jpg') no-repeat center center;
-  background-size: cover;
-}
-#section-1 .content-slider .slider #top-banner-3 {
-  background: url('../images/banner-03.jpg') no-repeat center center;
-  background-size: cover;
-}
-#section-1 .content-slider .slider #top-banner-4 {
-  background: url('../images/banner-04.jpg') no-repeat center center;
-  background-size: cover;
-}
+    #section-1 .content-slider .slider #top-banner-1 {
+        background: url('https://images.squarespace-cdn.com/content/v1/6270dcb52a53a65bc96c6dae/3fc09a04-9d8d-4e81-a6dc-a74e3c6f36ed/image-asset.jpeg') no-repeat center center;
+        background-size: cover;
+    }
+    #section-1 .content-slider .slider #top-banner-2 {
+        background: url('https://images.pexels.com/photos/19161533/pexels-photo-19161533/free-photo-of-iklim-soguk-alginligi-soguk-kar.jpeg') no-repeat center center;
+        background-size: cover;
+    }
+    #section-1 .content-slider .slider #top-banner-3 {
+        background: url('../images/hassloch-205538_1280.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    #section-1 .content-slider .slider #top-banner-4 {
+        background: url('https://tatilhome.com.tr/uploads/2021/07/kapadokya-turu-1-gece-1.webp') no-repeat center center;
+        background-size: cover;
+    }
 #section-1 .content-slider nav {
   position: absolute;
   bottom: 30px;
@@ -1137,7 +1137,7 @@ About Page Style
 
 .about-main-content {
   margin-top: 70px;
-  background-image: url(../images/about-content-bg.jpg);
+
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1148,7 +1148,7 @@ About Page Style
 .blur-bg {
 	width: 100%;
   height: 100%;
-  background: url(../images/about-content-bg.jpg) no-repeat center center fixed;
+
   background-size: cover;
   filter: blur(8px) brightness(80%);
   position: absolute;
